@@ -22,11 +22,15 @@ import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.DaoException;
 
+import java.io.Serializable;
+
 @Entity(active = true)
-public class Student {
+public class Student implements Serializable {
+
+    private static final long serialVersionUID = -434748295465682275L;
 
     @Id
-    private long Id;
+    private Long Id;
 
     /**
      * 用户名
@@ -46,8 +50,8 @@ public class Student {
     /** Used for active entity operations. */
     @Generated(hash = 1943931642)
     private transient StudentDao myDao;
-    @Generated(hash = 1074306746)
-    public Student(long Id, String UserName, int Age, String Sex, boolean Happy) {
+    @Generated(hash = 869084623)
+    public Student(Long Id, String UserName, int Age, String Sex, boolean Happy) {
         this.Id = Id;
         this.UserName = UserName;
         this.Age = Age;
@@ -57,10 +61,10 @@ public class Student {
     @Generated(hash = 1556870573)
     public Student() {
     }
-    public long getId() {
+    public Long getId() {
         return this.Id;
     }
-    public void setId(long Id) {
+    public void setId(Long Id) {
         this.Id = Id;
     }
     public String getUserName() {
@@ -126,5 +130,6 @@ public class Student {
         this.daoSession = daoSession;
         myDao = daoSession != null ? daoSession.getStudentDao() : null;
     }
+
 
 }

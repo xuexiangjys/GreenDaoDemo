@@ -22,6 +22,7 @@ import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
+import com.xuexiang.greendaodemo.core.db.DataBaseUtils;
 import com.xuexiang.greendaodemo.utils.sdkinit.UMengInit;
 import com.xuexiang.greendaodemo.utils.sdkinit.XBasicLibInit;
 
@@ -49,7 +50,7 @@ public class MyApp extends Application {
      */
     private void initLibs() {
         XBasicLibInit.init(this);
-
+        DataBaseUtils.init(this);
         //运营统计数据运行时不初始化
         if (!MyApp.isDebug()) {
             UMengInit.init(this);
